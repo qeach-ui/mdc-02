@@ -38,7 +38,6 @@ console.log("Названия товаров:", productNames);
 const targetProduct = products.find(p => p.id === 5);
 
 if (targetProduct !== undefined) {
-    // Проверка необязательного описания
     if (targetProduct.description !== undefined) {
         console.log("Описание:", targetProduct.description);
     }
