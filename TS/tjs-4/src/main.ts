@@ -78,7 +78,8 @@ function selectItems(items: OrderItem[], predicate: (item: OrderItem) => boolean
 const expensiveItemsFilter = (item: OrderItem) => item.unitPrice > 1000;
 const multipleQuantityFilter = (item: OrderItem) => item.quantity > 1;
 
-const allItems = orders.flatMap(order => order.items); 
+
+const allItems = orders.flatMap(order => order.items);
 const itemTitles: string[] = allItems.map(item => item.title);
 
 const targetItem = allItems.find(item => item.id === 5);
@@ -105,10 +106,10 @@ console.log("Заказы со скидкой:", selectOrders(orders, discounted
 function sumValues(...values: number[]): number {
     return values.reduce((total, value) => total + value, 0);
 }
-console.log("Сумма чисел (пусто):", sumValues()); 
-console.log("Сумма чисел (одно):", sumValues(10)); 
-console.log("Сумма чисел (несколько):", sumValues(10, 20, 30));
 
+console.log("Сумма чисел (пусто):", sumValues());
+console.log("Сумма чисел (одно):", sumValues(10)); 
+console.log("Сумма чисел (несколько):", sumValues(10, 20, 30)); 
 
 function transformItems(items: OrderItem[], transformCallback: (item: OrderItem) => OrderItem): OrderItem[] {
     return items.map(transformCallback);
